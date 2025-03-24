@@ -1,0 +1,185 @@
+// package Books;
+
+// import java.util.ArrayList;
+// import java.util.HashMap;
+// import java.util.List;
+// import java.util.Map;
+
+// public class books implements BooksInventory<books> {
+
+//             private static Map<String,books> booksMap = new HashMap<>() ;
+
+//             // instance variables
+
+//             public  String title;
+        
+//             public  String author;
+        
+//             private String isbn;
+        
+//             public  int publicationYear;
+
+//             private Boolean bookBorrowed = false;
+
+//             private static Map<String, String> bookStatus = new HashMap<>();
+
+
+//             // constructor
+
+//             public books(String title, String author, String isbn, int publicationYear) {
+//                 this.title = title;
+//                 this.author = author;
+//                 this.isbn = isbn;
+//                 this.publicationYear = publicationYear;
+        
+//             }
+        
+//             public books() {
+//                 //TODO Auto-generated constructor stub
+//             }
+
+             
+//             // getters
+//             public String getTitle() {
+//                 return title;
+//             }
+        
+//             public String getAuthor() {
+//                 return author;
+//             }
+        
+//             public int getPublicationYear() {
+//                 return publicationYear;
+//             }
+        
+//             public String getIsbn() {
+//                 return isbn;
+//             }
+
+        
+//             // setters
+//             public void setTitle(String title) {
+//                 this.title = title;
+//             }
+        
+//             public void setAuthor(String author) {
+//                 this.author = author;
+//             }
+        
+//             public void setPublicationYear(int publicationYear) {
+//                 this.publicationYear = publicationYear;
+//             }
+        
+//             public void setIsbn(String isbn) {
+//                 this.isbn = isbn;
+//             }
+        
+//             public String toString() {
+//                 return "Title: " + title + ", Author: " + author + ", Publication Year: " + publicationYear;
+//             }
+    
+            
+//         // The methods are:
+//         // - addBook
+//         // - removeBook
+//         // - searchByTitle
+//         // - searchByAuthor
+//         // - searchByIsbn
+//         // You can use the books list to store the books
+    
+//         @Override
+//         public void addBook(String title, String author, String isbn, int publicationYear) {
+//             books book = new books(title, author, isbn, publicationYear);
+//             booksMap.put(isbn, book);
+//             System.out.println("Book added: " + book.author);
+//         }
+
+
+//         @Override 
+//         public void removeBook(String isbn) {
+//             books removedBook = booksMap.remove(isbn);
+//             if (removedBook != null ) {
+//                 System.out.println(removedBook.title + " removed");
+//             } else {
+//                 System.out.println("Book not found");
+//             }
+//         }
+
+
+//         @Override
+//         public void searchByTitle(String title) {
+//             Boolean found = false;
+//             for (books book : booksMap.values()) {
+//                 if (book.getTitle().equals(title)) {
+//                     System.out.println(book.title +" found");
+//                     found = true;
+//                     break;
+//                 }
+//             }
+//             if (!found) {
+//                 System.out.println("Book not found");
+//             }
+//         }
+
+//         @Override
+//         public void searchByAuthor(String author) {
+//             Boolean found = false;
+//             for (books book : booksMap.values()) {
+//                 if (book.getAuthor().equals(author)) {
+//                     System.out.println(book.author +" found");
+//                     found = true;
+//                     break;
+//                 }
+//             }
+//             if (!found) {
+//                 System.out.println("Book not found");
+//             }
+        
+//         }
+
+//         @Override
+//         public void searchByIsbn(String isbn) {
+//             Boolean found = false;
+//             for (books book : booksMap.values()) {
+//                 if (book.getIsbn().equals(isbn)) {
+//                     System.out.println(book.isbn +" found");
+//                     found = true;
+//                     break;
+//                 }
+//             }
+//             if (!found) {
+//                 System.out.println("Book not found");
+//             }
+//         }
+
+       
+        
+//         @Override
+//         public List<String> displayBooks() {
+//             List<String> booksList = new ArrayList<>();
+//             for (books book : booksMap.values()) {
+//                 booksList.add(book.getTitle());
+//             }
+//             return booksList;
+//         }
+
+        
+//         public void borrowBook(String name) {
+//             if (bookAvailableStatus(name)) {
+//                 bookBorrowed = true;
+//                 bookStatus.put(name, "Borrowed");
+//                 System.out.println("Book borrowed ");
+//             } else {
+//                 System.out.println(name+ "Book available");
+//             }
+//         }
+
+//        private Boolean bookAvailableStatus(String name) {
+//            if (bookBorrowed) {
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        }
+
+// }
